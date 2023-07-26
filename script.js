@@ -27,4 +27,12 @@ function showPets (){
     alert (petArray)
 }
 
+function removePet() { 
+    //Keep asking which subjects they want to delete until told to stop.
+    let deletePet = prompt('Which pet do you want to delete?')
+    while(deletePet!= 'stop'){
+      pet.splice(index, 1)
+    }
+}
+
 
