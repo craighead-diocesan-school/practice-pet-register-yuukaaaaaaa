@@ -11,7 +11,7 @@ let petArray = [
     {name: 'Coco', age: 10, speices: 'Dog'}
 ]
 
-function addPet () {
+function addPets () {
     let name = prompt(" What's your pet's name? ")
     let species = prompt("What's kind of your dog?")
     let age = prompt('How old is your dog?')
@@ -27,7 +27,7 @@ function showPets (){
     alert (petArray)
 }
 
-function removePet() { 
+function removePets() { 
     //Keep asking which subjects they want to delete until told to stop.
     let deletePet = prompt('Which pet do you want to delete?')
     while(deletePet!= 'stop'){
