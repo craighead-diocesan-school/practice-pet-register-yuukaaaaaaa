@@ -35,4 +35,36 @@ function removePet() {
     }
 }
 
+function searchPets() {
+    let searchName = prompt('What is the name of pet do you want to search?')
+    let searchResult = false
+    for (let name of petArray) {
+      if (name == searchName) {
+        searchResult = true 
+      }
+    }
+  
+    if (searchResult == true){
+      alert(searchName + ' was found! ')
+    } else{
+      alert(searchName + ' was not found...')
+    }
+}
+
+function searchSpecies() {
+    let searchSpeices = prompt('What is the species of pet do you want to search?')
+    let searchResult = false
+    for (let name of petArray) {
+      if (name == searchSpecies) {
+        searchResult = true 
+      }
+    }
+  
+    if (searchResult == true){
+      alert(searchSpecies + ' was found! ')
+    } else{
+      alert(searchSpecies + ' was not found...')
+    }
+}
+
 
