@@ -11,7 +11,7 @@ let petArray = [
     {name: 'Coco', age: 10, speices: 'Dog'}
 ]
 
-function pet () {
+function addPet () {
     let name = prompt(" What's your pet's name? ")
     let species = prompt("What's kind of your dog?")
     let age = prompt('How old is your dog?')
