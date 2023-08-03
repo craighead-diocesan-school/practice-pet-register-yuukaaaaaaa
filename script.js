@@ -10,41 +10,65 @@ function addPets () {
     let name = prompt(" What's your pet's name? ")
     let species = prompt("What's kind of your pet?")
     let age = prompt('How old is your pet?')
-    let pet = {
+
+    // Check that the input is valid
+    if(name.match(/[a-zA-Z0-9]+/)&&
+       age.match (/^([1-9]|[1-9][0-9])$/) &&
+       species.test(/^[a-zA-Z]+$/)){
+      let pet = {
         name: name,
         age: age,
         species: species,
-    }
+      }
+
+    // add pet object to pet array
     petArray.push(pet)
+    } else {
+      alert('The pet details are not valid')
+    }
 }
+
 
 function showPets(){
     // use a for..of loop to go through the pet array
     for (let currentPet of petArray){
     alert(currentPet.name)
     }
-    // output the name of the pet
   }
   
 
 function removePets() { 
-    //Keep asking which subjects they want to delete until told to stop.
-    let deletePet = prompt('Which pet do you want to delete?')
-    while(deletePet!= 'stop'){
-      pet.splice(indextoRemove, 1)
+    //Output the names of each pet
+    let index = 0
+    for(let pet of petArray){
+      alert(index + ":" + pet.name)
+      index = index + 1
     }
+
+    //get the index of the pet to remove
+    let indextoRemove = prompt('Which pet would you like to remove?')
+
+    // remove the pet at the index
+    petArray.splice(indextoRemove,1)
+
+
 }
 
 function searchPets() {
-    // Ask for the name to search and show petname + was found if it can find it otherwise show petname + was not found.
+    // Ask for the name to search
     let searchName = prompt('What is the name of pet do you want to search?')
+    
+    //Create a variable to store whether we found it or not (haven't yet)
     let searchResult = false
+
+    //Check each pet's name to see if it's the pet we're looking for, update the result if it is
     for (let pet of petArray) {
       if (pet.name == searchName) {
         searchResult = true 
       }
     }
-  
+
+    //Output whether the search found the pet or not
     if (searchResult == true){
       alert(searchName + ' was found! ')
     } else{
